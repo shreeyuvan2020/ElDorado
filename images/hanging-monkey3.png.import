@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpu7fgi33g8vb"
-path="res://.godot/imported/ground.png-19dd19062ae149a099889071e7b87881.ctex"
+uid="uid://m1bkn2k28cc0"
+path="res://.godot/imported/hanging-monkey3.png-d0a70450a3919b6f8c2f7d61e1df9c72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ground.png"
-dest_files=["res://.godot/imported/ground.png-19dd19062ae149a099889071e7b87881.ctex"]
+source_file="res://images/hanging-monkey3.png"
+dest_files=["res://.godot/imported/hanging-monkey3.png-d0a70450a3919b6f8c2f7d61e1df9c72.ctex"]
 
 [params]
 

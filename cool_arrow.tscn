@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl5gk4tbktnux"]
+
+[ext_resource type="Script" uid="uid://476rxxf3v3co" path="res://cool_arrow.gd" id="1_b540i"]
+[ext_resource type="Texture2D" uid="uid://b11g2ha5b1hd6" path="res://images/gold_arrow.png" id="2_b540i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b540i"]
+size = Vector2(138, 20)
+
+[node name="cool arrow" type="Area2D"]
+position = Vector2(213, 142)
+script = ExtResource("1_b540i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, -34)
+shape = SubResource("RectangleShape2D_b540i")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-25, -34)
+scale = Vector2(6.96, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-23, -31.6875)
+scale = Vector2(4.36719, 4.24023)
+texture = ExtResource("2_b540i")
