@@ -1,24 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl5gk4tbktnux"]
+[gd_scene load_steps=5 format=3 uid="uid://bl5gk4tbktnux"]
 
 [ext_resource type="Script" uid="uid://476rxxf3v3co" path="res://cool_arrow.gd" id="1_b540i"]
 [ext_resource type="Texture2D" uid="uid://b11g2ha5b1hd6" path="res://images/gold_arrow.png" id="2_b540i"]
+[ext_resource type="Script" uid="uid://p5nb8xy4jy0v" path="res://scripts/hitbox.gd" id="3_iprpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b540i"]
 size = Vector2(138, 20)
 
 [node name="cool arrow" type="Area2D"]
-position = Vector2(213, 142)
+position = Vector2(3, -21)
 script = ExtResource("1_b540i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-24, -34)
+position = Vector2(-3, 18)
 shape = SubResource("RectangleShape2D_b540i")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-25, -34)
+position = Vector2(-2, 17)
 scale = Vector2(6.96, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-23, -31.6875)
+position = Vector2(10, 21)
 scale = Vector2(4.36719, 4.24023)
 texture = ExtResource("2_b540i")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_mask = 0
+script = ExtResource("3_iprpi")
+metadata/_custom_type_script = "uid://p5nb8xy4jy0v"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-4, 18)
+shape = SubResource("RectangleShape2D_b540i")

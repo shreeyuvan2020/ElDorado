@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj84yruge38rb"]
+
+[ext_resource type="Script" uid="uid://c8c2mj3m6fslf" path="res://scripts/hearts.gd" id="1_uykdk"]
+[ext_resource type="Texture2D" uid="uid://cgpvr4m65fuln" path="res://images/heartHUD.png" id="2_0j0pp"]
+
+[node name="HeartHUD" type="CanvasLayer"]
+script = ExtResource("1_uykdk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 42.0
+offset_bottom = 41.0
+
+[node name="FirstHeart" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_0j0pp")
+
+[node name="SecondHeart" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_0j0pp")
+
+[node name="ThirdHeart" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_0j0pp")
+
+[node name="FourthHeart" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_0j0pp")
+
+[node name="FifthHeart" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_0j0pp")
