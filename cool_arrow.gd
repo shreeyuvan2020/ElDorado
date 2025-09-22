@@ -3,7 +3,8 @@ extends Area2D
 var direction: Vector2 = Vector2.RIGHT
 var dot_radius: float = 10
 var dot_color: Color = Color.RED
-
+var hurtbox = HurtBox
+var counter = false
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 	if direction != Vector2.ZERO:

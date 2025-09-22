@@ -43,10 +43,13 @@ func _process(delta: float) -> void:
 		else:
 			get_tree().root.add_child(current_arrow)
 		current_arrow.global_position = global_arrow_pos
+		var arrow_hitbox = current_arrow.get_node("HitBox")
 		current_arrow.global_rotation = global_arrow_rot
 		var launch_speed = MIN_SPEED + (MAX_SPEED - MIN_SPEED) * (charge_time / MAX_CHARGE_TIME)
+		arrow_hitbox.damage = randf_range(1, launch_speed / 4)
+		print(arrow_hitbox.damage)
 		current_arrow.speed = launch_speed
-		current_arrow.direction = Vector2.RIGHT.rotated(global_arrow_rot)  # Set direction based on rotation instead of the goofy calculations before :sob:
+		current_arrow.direction = Vector2.RIGHT.rotated(global_arrow_rot)
 		charging = false
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

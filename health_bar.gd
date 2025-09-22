@@ -1,10 +1,10 @@
 extends ProgressBar
 var health = 3
-var ant = get_parent()
 func _on_hurt_box_received_damage(damage: int) -> void:
-	if health - damage > 0:
-		print(ant)
-		print(value)
+	var ant = get_parent()
+	if value - damage > 0:
 		value -= damage
-	else:
+		print(value)
+		health = value
+	elif value - damage <= 0.0:
 		ant.queue_free()

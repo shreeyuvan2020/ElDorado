@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cvsc6e2bas4tw" path="res://images/bow_holding-Sheet.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b6sblghk3hatb" path="res://global.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://dfds2210y0ws0" path="res://bad_ant.gd" id="5_lquwl"]
-[ext_resource type="Texture2D" uid="uid://5bbbe2ovyckj" path="res://images/icon.svg" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://m1bkn2k28cc0" path="res://images/hanging-monkey3.png" id="7_272bh"]
 [ext_resource type="Script" uid="uid://cdu8sla1u4gyv" path="res://scripts/hurtbox.gd" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://cot2tll6oxgpj" path="res://health_bar.gd" id="9_kek77"]
@@ -124,11 +123,14 @@ texture = SubResource("CompressedTexture2D_1bvp3")
 [sub_resource type="TileSet" id="TileSet_lquwl"]
 sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5vw27"]
+load_path = "res://.godot/imported/icon.svg-570f8ac52c7b99fc8d4fc47f5d497099.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vw27"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_7mycd")
+"texture": SubResource("CompressedTexture2D_5vw27")
 }],
 "loop": true,
 "name": &"biting",
@@ -237,9 +239,7 @@ offset_bottom = -83.0
 scale = Vector2(30.64, 0.600005)
 theme_override_styles/background = SubResource("StyleBoxFlat_5vw27")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kek77")
-max_value = 3.0
-step = 1.0
-value = 3.0
+value = 100.0
 show_percentage = false
 script = ExtResource("9_kek77")
 
