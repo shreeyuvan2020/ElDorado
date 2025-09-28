@@ -1,12 +1,15 @@
-[gd_scene load_steps=31 format=4 uid="uid://co56rfj5ijbe4"]
+[gd_scene load_steps=39 format=4 uid="uid://co56rfj5ijbe4"]
 
 [ext_resource type="Script" uid="uid://cfdrc57b36cyh" path="res://global2.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://cofcfk37hrxg1" path="res://character_body_2d.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://cvsc6e2bas4tw" path="res://images/bow_holding-Sheet.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cvsc6e2bas4tw" path="res://sprites/bow_holding-Sheet.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://b6sblghk3hatb" path="res://global.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://dfds2210y0ws0" path="res://bad_ant.gd" id="5_lquwl"]
-[ext_resource type="Texture2D" uid="uid://m1bkn2k28cc0" path="res://images/hanging-monkey3.png" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://ci1b0w1skqivs" path="res://sprites/bullet-ant.png" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://drenf41wvboxb" path="res://sprites/ant-crawling.png" id="6_efxa6"]
 [ext_resource type="Script" uid="uid://cdu8sla1u4gyv" path="res://scripts/hurtbox.gd" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bj84yruge38rb" path="res://heart_hud.tscn" id="9_4c57u"]
+[ext_resource type="Script" uid="uid://p5nb8xy4jy0v" path="res://scripts/hitbox.gd" id="9_efxa6"]
 [ext_resource type="Script" uid="uid://cot2tll6oxgpj" path="res://health_bar.gd" id="9_kek77"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2yge"]
@@ -126,6 +129,22 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5vw27"]
 load_path = "res://.godot/imported/icon.svg-570f8ac52c7b99fc8d4fc47f5d497099.ctex"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("6_efxa6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("6_efxa6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("6_efxa6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("6_efxa6")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vw27"]
 animations = [{
 "frames": [{
@@ -138,15 +157,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_272bh")
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cqfq")
+}],
+"loop": true,
+"name": &"crawling",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4c57u")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(156, 171)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+size = Vector2(114, 77)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 bg_color = Color(0.93, 0, 0, 1)
@@ -156,10 +192,13 @@ corner_detail = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
 bg_color = Color(0, 0.61, 0.0203333, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
+size = Vector2(113, 72)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7mycd"]
-vertices = PackedVector2Array(961.969, 412.031, -296.039, 416.961, -297.953, -40.0469, 961.023, -46.9375)
+vertices = PackedVector2Array(923.062, -23.0312, 925.93, 438, -339.18, 438.992, -347.812, -26.9609)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(972, 422, 971, -57, -308, -50, -306, 427)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(936, 448, 933, -33, -358, -37, -349, 449)])
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(503, 178)
@@ -216,26 +255,25 @@ script = ExtResource("5_lquwl")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="BadAnt"]
 
 [node name="Biter" type="AnimatedSprite2D" parent="BadAnt"]
-scale = Vector2(2.29011, 2.47332)
+position = Vector2(-21, 47)
+scale = Vector2(4.72318, 3.93979)
 sprite_frames = SubResource("SpriteFrames_5vw27")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BadAnt"]
-position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_5vw27")
+animation = &"crawling"
+frame_progress = 0.212087
 
 [node name="HurtBox" type="Area2D" parent="BadAnt"]
 script = ExtResource("8_5vw27")
 metadata/_custom_type_script = "uid://cdu8sla1u4gyv"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BadAnt/HurtBox"]
-position = Vector2(1, 4)
-shape = SubResource("RectangleShape2D_h2yge")
+[node name="AntPolyHurt" type="CollisionShape2D" parent="BadAnt/HurtBox"]
+position = Vector2(1, 61)
+shape = SubResource("RectangleShape2D_4c57u")
 
 [node name="health" type="ProgressBar" parent="BadAnt"]
-offset_left = -58.0
-offset_top = -110.0
-offset_right = -54.0
-offset_bottom = -83.0
+offset_left = -61.0
+offset_top = -14.0
+offset_right = -57.0
+offset_bottom = 13.0
 scale = Vector2(30.64, 0.600005)
 theme_override_styles/background = SubResource("StyleBoxFlat_5vw27")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kek77")
@@ -243,8 +281,22 @@ value = 100.0
 show_percentage = false
 script = ExtResource("9_kek77")
 
+[node name="HitBox" type="Area2D" parent="BadAnt"]
+script = ExtResource("9_efxa6")
+metadata/_custom_type_script = "uid://p5nb8xy4jy0v"
+
+[node name="AntPolyHit" type="CollisionPolygon2D" parent="BadAnt/HitBox"]
+position = Vector2(2, 57)
+polygon = PackedVector2Array(26, -8, 27, 11, 50, 11, 50, 4, 45, 4, 45, 7, 27, 7, 26, -4, 45, -4, 45, 0, 50, 0, 50, -8)
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="BadAnt"]
+position = Vector2(-1, 61)
+shape = SubResource("RectangleShape2D_efxa6")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-5, -6)
+position = Vector2(41, -22)
 navigation_polygon = SubResource("NavigationPolygon_7mycd")
+
+[node name="HeartHUD" parent="." instance=ExtResource("9_4c57u")]
 
 [connection signal="received_damage" from="BadAnt/HurtBox" to="BadAnt/health" method="_on_hurt_box_received_damage"]

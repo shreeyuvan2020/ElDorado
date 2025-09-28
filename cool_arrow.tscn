@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl5gk4tbktnux"]
 
 [ext_resource type="Script" uid="uid://476rxxf3v3co" path="res://cool_arrow.gd" id="1_b540i"]
-[ext_resource type="Texture2D" uid="uid://b11g2ha5b1hd6" path="res://images/gold_arrow.png" id="2_b540i"]
+[ext_resource type="Texture2D" uid="uid://b11g2ha5b1hd6" path="res://sprites/gold_arrow.png" id="2_b540i"]
 [ext_resource type="Script" uid="uid://p5nb8xy4jy0v" path="res://scripts/hitbox.gd" id="3_iprpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b540i"]

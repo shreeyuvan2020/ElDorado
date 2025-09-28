@@ -1,9 +1,9 @@
 extends CanvasLayer
-var full_heart = preload("res://images/heartHUD.png")
-var half_heart = preload("res://images/halfheart.png")
-var third_quarter_heart = preload("res://images/4heart.png")
-var quarter_heart = preload("res://images/quarterheart.png")
-var empty_heart = preload("res://images/emptyheart.png")
+var full_heart = preload("res://sprites/heartHUD.png")
+var half_heart = preload("res://sprites/halfheart.png")
+var third_quarter_heart = preload("res://sprites/4heart.png")
+var quarter_heart = preload("res://sprites/quarterheart.png")
+var empty_heart = preload("res://sprites/emptyheart.png")
 @onready var hearts = get_children()
 func update_health(health):
 	for i in range(hearts.size()):

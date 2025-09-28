@@ -6,7 +6,7 @@ extends CharacterBody2D
 var charging: bool = false
 var charge_time: float = 0.0
 const MAX_CHARGE_TIME: float = 2.0
-const MIN_SPEED: float = 200.0
+const MIN_SPEED: float = 100.0
 const MAX_SPEED: float = 600.0
 var health: int = 10
 var first_time = true

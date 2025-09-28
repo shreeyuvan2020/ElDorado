@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj84yruge38rb"]
 
 [ext_resource type="Script" uid="uid://c8c2mj3m6fslf" path="res://scripts/hearts.gd" id="1_uykdk"]
-[ext_resource type="Texture2D" uid="uid://cgpvr4m65fuln" path="res://images/heartHUD.png" id="2_0j0pp"]
+[ext_resource type="Texture2D" uid="uid://cgpvr4m65fuln" path="res://sprites/heartHUD.png" id="2_0j0pp"]
 
 [node name="HeartHUD" type="CanvasLayer"]
 script = ExtResource("1_uykdk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 42.0
-offset_bottom = 41.0
+offset_left = 1942.0
+offset_top = 2.0
+offset_right = 2278.0
+offset_bottom = 66.0
+scale = Vector2(9.11112, 3.28)
 
 [node name="FirstHeart" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
